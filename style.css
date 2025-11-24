@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    color: #333;
+}
+
+.container {
+    margin: 0 15px;
+    text-align: center;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 450px;
+    padding: 40px 35px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: none;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.form-box.active {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+    animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2d3748;
+    /* ← CHANGE THIS for heading color */
+    font-weight: 600;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #abc0df;
+    /* ← CHANGE THIS for label color */
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+input {
+    width: 100%;
+    padding: 14px 18px;
+    margin: 5px 0;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 16px;
+    background: #f8fafc;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+input:focus {
+    border-color: #ff7e5f;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(255, 126, 95, 0.1);
+    transform: translateY(-2px);
+}
+
+select {
+    width: 100%;
+    padding: 14px 18px;
+    margin: 5px 0;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 16px;
+    background: #f8fafc;
+    transition: all 0.3s ease;
+    outline: none;
+    cursor: pointer;
+}
+
+select:focus {
+    border-color: #ff7e5f;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(255, 126, 95, 0.1);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 126, 95, 0.4);
+    background: linear-gradient(135deg, #ff6b4a, #fea366);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+p {
+    margin-top: 20px;
+    font-size: 14.5px;
+    color: #c2cddf;
+    /* ← CHANGE THIS for paragraph text */
+    text-align: center;
+}
+
+p a {
+    color: #ff7e5f;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+p a:hover {
+    color: #e55a3c;
+}
+
+p a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    transition: width 0.3s ease;
+}
+
+p a:hover::after {
+    width: 100%;
+}
+
+.error-message {
+    padding: 15px;
+    background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+    border-radius: 12px;
+    color: #e17055;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    border-left: 4px solid #e17055;
+    box-shadow: 0 4px 15px rgba(225, 112, 85, 0.15);
+}
+
+/* Enhanced Box Styles for User and Admin Pages */
+.box {
+    max-width: 600px;
+    padding: 50px 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    transform: translateY(0);
+    transition: all 0.4s ease;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(255, 126, 95, 0.2);
+}
+
+.box h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.box p {
+    font-size: 24px;
+    margin-bottom: 35px;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.box span {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+.box .btn {
+    display: inline-block;
+    width: 180px;
+    padding: 14px 25px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.box .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255, 126, 95, 0.4);
+    background: linear-gradient(135deg, #ff6b4a, #fea366);
+}
+
+.box .btn:active {
+    transform: translateY(-1px);
+}
+
+/* Orange gradient border animation */
+.form-box::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #cda596, #534232, #432d27);
+    border-radius: 22px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.form-box:hover::before {
+    opacity: 1;
+}
+
+/* Box border animation inside the admin page */
+.box::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #cda596, #534232, #432d27);
+    border-radius: 27px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.box:hover::before {
+    opacity: 1;
+}
+
+/* Responsive improvements */
+@media (max-width: 480px) {
+    .form-box {
+        padding: 30px 25px;
+        margin: 0 10px;
+    }
+
+    .box {
+        padding: 40px 25px;
+        margin: 0 15px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .box h1 {
+        font-size: 32px;
+    }
+
+    .box p {
+        font-size: 20px;
+    }
+}
+
+/* Loading state for buttons */
+button.loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+button.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.8s ease infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.success-message {
+    padding: 15px;
+    background: linear-gradient(135deg, #ffeaa7, #fd9644);
+    border-radius: 12px;
+    color: #e17055;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    border-left: 4px solid #fd9644;
+    box-shadow: 0 4px 15px rgba(253, 150, 68, 0.15);
+}
+
+/* Additional orange accent for select dropdown */
+select:focus {
+    border-color: #ff7e5f;
+}
+
+/* Enhanced orange theme for active states */
+input:focus,
+select:focus {
+    border-color: #ff7e5f;
+    box-shadow: 0 0 0 3px rgba(255, 126, 95, 0.2);
+}
