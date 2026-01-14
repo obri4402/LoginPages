@@ -1,0 +1,1 @@
+This project was originally developed last year and is now being revisited as part of my continued learning and skill refresh. I’m currently reviewing, improving, and updating the codebase to apply better practices and reinforce my understanding of the technologies used.
